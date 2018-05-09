@@ -9,9 +9,5 @@ class Home extends CI_Controller{
         $this->load->view('Home_view');
     }
 	
-	function asd(){
-        $this->load->view('Home_iew');
-    }
- 
 }
 ?>
