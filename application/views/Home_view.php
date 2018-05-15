@@ -92,13 +92,13 @@
             <ul id="menu" class="collapse">
                 <li class="panel active">
                     <a href="index.html" >
-                        <i class="icon-table"></i> Dashboard
+                        <i class="icon-table"></i> Home
                     </a>                   
                 </li>
 
                 <li class="panel ">
                     <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-                        <i class="icon-tasks"> </i> UI Elements     
+                        <i class="icon-tasks"> </i> UI     
 	   
                         <span class="pull-right">
                           <i class="icon-angle-left"></i>

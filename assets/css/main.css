@@ -188,13 +188,15 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 177px 130px 33px 95px;
+  padding: 97px 130px 33px 95px;
 }
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
   width: 316px;
+  height: 316px;
+
 }
 
 .login100-pic img {

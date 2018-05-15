@@ -1,2 +1,0 @@
-# judul_ta
-Bismillahirohmanirohim

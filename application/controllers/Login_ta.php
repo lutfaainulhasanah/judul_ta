@@ -2,7 +2,7 @@
 class Login_ta extends CI_Controller{
     function __construct(){
         parent::__construct();
-        $this->load->model('login_model');
+        $this->load->model('Login_model');
     }
  
     function index(){
@@ -13,19 +13,24 @@ class Login_ta extends CI_Controller{
         $username=htmlspecialchars($this->input->post('username',TRUE),ENT_QUOTES);
         $password=htmlspecialchars($this->input->post('password',TRUE),ENT_QUOTES);
  
-        $cek_dosen=$this->login_model->auth_dosen($username,$password);
+        $cek_dosen=$this->Login_model->auth_dosen($username,$password);
  
         if($cek_dosen->num_rows() > 0){ //jika login sebagai dosen
                         $data=$cek_dosen->row_array();
                 $this->session->set_userdata('masuk',TRUE);
-                 if($data['user_level']=='1'){ //Akses admin
-                    $this->session->set_userdata('akses','1');
+                 if($data['user_level']=='koordinator'){ //Akses koordinator
+                    $this->session->set_userdata('akses','koordinator');
                     $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
                     redirect('page');
  
                  }else{ //akses dosen
-                    $this->session->set_userdata('akses','2');
+                    $this->session->set_userdata('akses','dosen');
+                                $this->session->set_userdata('ses_id',$data['nip']);
+                    $this->session->set_userdata('ses_nama',$data['nama']);
+                    redirect('page');
+                 }else{ //akses review
+                    $this->session->set_userdata('akses','review');
                                 $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
                     redirect('page');
@@ -36,7 +41,7 @@ class Login_ta extends CI_Controller{
                     if($cek_mahasiswa->num_rows() > 0){
                             $data=$cek_mahasiswa->row_array();
                     $this->session->set_userdata('masuk',TRUE);
-                            $this->session->set_userdata('akses','3');
+                            $this->session->set_userdata('akses','mahasiswa');
                             $this->session->set_userdata('ses_id',$data['nim']);
                             $this->session->set_userdata('ses_nama',$data['nama']);
                             redirect('page');
