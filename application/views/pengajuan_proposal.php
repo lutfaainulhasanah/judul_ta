@@ -7,6 +7,24 @@
 	<header>
         <center>
             <h1>Pengajuan Proposal</h1>
+            <p>
+			<label for="nim">NIM : </label>
+			<input type="text" name="nim" placeholder="nim" />
+		</p>
+		<p>
+			<label for="nama">Nama Lengkap : </label>
+			<input type="text" name="nama" placeholder="nama lengkap" />
+		</p>
+		<p>
+		<td>Golongan : </td>
+		<td><select name="golongan">
+		<option value>-</option>
+		<option value="a">Golongan A</option>
+		<option value="b">Golongan B</option>
+		<option value="c">Golongan C</option>
+		<option value="d">Golongan D</option>
+		</select></td>
+	</p>
 		<p>
 			<label for="cover">Cover : </label>
 			<input type="file" name="cover" placeholder="cover" />
