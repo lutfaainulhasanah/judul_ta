@@ -5,8 +5,12 @@ class Daftar_dosen extends CI_Controller{
         $this->load->model('login_model');
     }
  
-    function index(){
+    function dosen(){
         $this->load->view('Dosen_view');
+    }
+ 
+    function update(){
+        $this->load->view('view_update_dosen');
     }
  
 }
