@@ -8,47 +8,54 @@ class Login_ta extends CI_Controller{
     function index(){
         $this->load->view('login_view');
     }
- 
+
     function auth(){
-        $username=htmlspecialchars($this->input->post('username',TRUE),ENT_QUOTES);
-        $password=htmlspecialchars($this->input->post('password',TRUE),ENT_QUOTES);
+        $username=$this->input->post('username');
+        $password=$this->input->post('password');
  
         $cek_dosen=$this->Login_model->auth_dosen($username,$password);
- 
+        
         if($cek_dosen->num_rows() > 0){ //jika login sebagai dosen
                         $data=$cek_dosen->row_array();
                 $this->session->set_userdata('masuk',TRUE);
-                 if($data['user_level']=='koordinator'){ //Akses koordinator
+
+                if($data['status']=='koordinator'){ //Akses koordinator
                     $this->session->set_userdata('akses','koordinator');
                     $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
-                    redirect('page');
+                    redirect('Page');
  
-                 }else{ //akses dosen
+                }else if($data['status']=='dosen'){ //akses dosen
                     $this->session->set_userdata('akses','dosen');
-                                $this->session->set_userdata('ses_id',$data['nip']);
+                    $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
-                    redirect('page');
-                 }else{ //akses review
-                    $this->session->set_userdata('akses','review');
-                                $this->session->set_userdata('ses_id',$data['nip']);
+                    redirect('Page');
+                
+                }else{ //akses reviewer
+                    $this->session->set_userdata('akses','reviewer');
+                    $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
-                    redirect('page');
-                 }
+                    redirect('Page');
+                
+                }
  
         }else{ //jika login sebagai mahasiswa
-                    $cek_mahasiswa=$this->login_model->auth_mahasiswa($username,$password);
+                    $cek_mahasiswa=$this->Login_model->auth_user($username,$password);
                     if($cek_mahasiswa->num_rows() > 0){
                             $data=$cek_mahasiswa->row_array();
                     $this->session->set_userdata('masuk',TRUE);
                             $this->session->set_userdata('akses','mahasiswa');
                             $this->session->set_userdata('ses_id',$data['nim']);
                             $this->session->set_userdata('ses_nama',$data['nama']);
-                            redirect('page');
+                            // echo 'a';
+                            // return;
+                            redirect('Page');
                     }else{  // jika username dan password tidak ditemukan atau salah
+                       // echo 'b';
+                       //      return;
                             $url=base_url();
                             echo $this->session->set_flashdata('msg','Username Atau Password Salah');
-                            redirect($url);
+                            redirect(base_url('login_ta'));
                     }
         }
  
