@@ -5,6 +5,8 @@
 </head>
 <body>
 <h1 align="center">Daftar Dosen</h1>
+<p align="center">
+		<form action="<?php echo base_url()?>Daftar_dosen/update" method="post">
 <table border="1" align="center">
           <tr>
             <td width="125">NIP</td>
@@ -14,7 +16,12 @@
           <tr>
             <td>Nama</td>
             <td><label for="nama"></label>
-            <input type="nama" name="nama"  ></td>
+            <input type="text" name="nama"  ></td>
+          </tr>
+          <tr>
+            <td>Prodi</td>
+            <td><label for="prodi"></label>
+            <input type="text" name="prodi"  ></td>
           </tr>
           <tr>
             <td>Status</td>
@@ -23,10 +30,9 @@
           </tr>
 </table>
 </div>
-  <p align="center">
-     <a href="view_update_dosen"><button class='btn btn-mini btn-primary'>Update</button></a>
-    <a href="view_update_dosen"> <button class='btn btn-mini btn-primary'>kembali</button></a>
-  </p>
+  <td><p align="center">
+<input type="submit" name="btnedit" value="Update">
+					<a href="<?php echo base_url()?>Daftar_dosen">Kembali</a></td>
     </div>
 </body>
 </html>

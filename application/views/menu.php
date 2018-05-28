@@ -4,7 +4,7 @@
 
 <?php if($this->session->userdata('akses')=='Koordinator'){?>
     <li class="panel active"><a href="<?php echo base_url().'page'?>">Home</a></li>
-    <li><a href="<?php echo base_url().'Dosen_view'?>"> Dosen </a></li>
+    <li><a href="<?php echo base_url().'dosen'?>"> Dosen </a></li>
     <li><a href="<?php echo base_url().'penelitian'?>">Penelitian </a></li>
     <li><a href="<?php echo base_url().'dospem'?>"> Dospem </a></li>
     <li><a href="<?php echo base_url().'usulan_judul'?>"> Usulan Judul</a></li>

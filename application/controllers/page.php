@@ -2,11 +2,13 @@
 class Page extends CI_controller{
 	function __construct(){
 		parent::__construct();
-		//validasi jika user belum login
+		 //validasi jika user belum login
 		if ($this->session->userdata('masuk') != TRUE){
 			$url=base_url();
 			redirect($url);
 		}
+		$this->load->helper(array('url'));
+		$this->load->model('Model_Dosen');
 	}
 
 	function index(){
@@ -72,8 +74,7 @@ class Page extends CI_controller{
       $this->load->view('v_proposal');
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
-    }
- 
+    } 
   }
 }
 ?>
