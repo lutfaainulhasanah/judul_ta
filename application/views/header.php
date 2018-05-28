@@ -52,9 +52,8 @@
                 <header class="navbar-header">
 
                     <a href="index.html" class="navbar-brand">
-                    <img src="<?php echo base_url().'assets/assets/img/logo.png'?>" alt="" />
-                        
-                        </a>
+                    <img src="<?php echo base_url().'assets/assets/img/lg.png'?>" alt="" />
+                                                </a>
                 </header>
                 <!-- END LOGO SECTION -->
                 <ul class="nav navbar-top-links navbar-right">
@@ -68,7 +67,7 @@
 
                         <ul class="dropdown-menu dropdown-user">
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="icon-signout"></i> Logout </a>
+                            <li><a href="<?php echo base_url('Login_ta')?>"><i class="icon-signout"></i> Logout </a>
                             </li>
                         </ul>
 

@@ -19,20 +19,20 @@ class Login_ta extends CI_Controller{
                         $data=$cek_dosen->row_array();
                 $this->session->set_userdata('masuk',TRUE);
 
-                if($data['status']=='koordinator'){ //Akses koordinator
-                    $this->session->set_userdata('akses','koordinator');
+                if($data['status']=='Koordinator'){ //Akses koordinator
+                    $this->session->set_userdata('akses','Koordinator');
                     $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
                     redirect('Page');
  
                 }else if($data['status']=='dosen'){ //akses dosen
-                    $this->session->set_userdata('akses','dosen');
+                    $this->session->set_userdata('akses','Dosen');
                     $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
                     redirect('Page');
                 
                 }else{ //akses reviewer
-                    $this->session->set_userdata('akses','reviewer');
+                    $this->session->set_userdata('akses','Reviewer');
                     $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
                     redirect('Page');
@@ -44,7 +44,7 @@ class Login_ta extends CI_Controller{
                     if($cek_mahasiswa->num_rows() > 0){
                             $data=$cek_mahasiswa->row_array();
                     $this->session->set_userdata('masuk',TRUE);
-                            $this->session->set_userdata('akses','mahasiswa');
+                            $this->session->set_userdata('akses','Mahasiswa');
                             $this->session->set_userdata('ses_id',$data['nim']);
                             $this->session->set_userdata('ses_nama',$data['nama']);
                             // echo 'a';
