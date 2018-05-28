@@ -25,7 +25,7 @@ class Login_ta extends CI_Controller{
                     $this->session->set_userdata('ses_nama',$data['nama']);
                     redirect('Page');
  
-                }else if($data['status']=='dosen'){ //akses dosen
+                }else if($data['status']=='Dosen'){ //akses dosen
                     $this->session->set_userdata('akses','Dosen');
                     $this->session->set_userdata('ses_id',$data['nip']);
                     $this->session->set_userdata('ses_nama',$data['nama']);
