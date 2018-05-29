@@ -13,27 +13,19 @@
         <td>Kuota</td>
         <td>Opsi</td>
     </tr>
-    <tr>
-        <td>&nbsp</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button>Update</button><button>Delete</button></td>
-    </tr>
-    <tr>
-        <td>&nbsp </td>
-        <td> </td>
-        <td> </td>
-        <td></td>
-        <td><button>Update</button><button>Delete</button> </td>
-    </tr>
-    <tr>
-        <td>&nbsp </td>
-        <td> </td>
-        <td> </td>
-        <td></td>
-        <td> <button>Update</button><button>Delete</button></td>
-    </tr>
+   
+     <?php
+       
+        foreach ($penelitian as $row) : ?>
+        <tr>
+            <td><?php echo $row->id_penelitian; ?></td>
+            <td><?php echo $row->nip; ?></td>
+            <td><?php echo $row->judul_penelitian;?></td>
+            <td><?php echo $row->kuota;?></td>
+            <td><a href="<?php echo base_url(); ?>Usulan_mhs/delete/<?php echo $row->id_penelitian;?>">Hapus</a></td>
+            
+        </tr>
+        <?php endforeach;?>
 </table><br>
      <button>Insert</button>
 </body>
