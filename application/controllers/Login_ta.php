@@ -22,19 +22,20 @@ class Login_ta extends CI_Controller{
                 if($data['status']=='Koordinator'){ //Akses koordinator
                     $this->session->set_userdata('akses','Koordinator');
                     $this->session->set_userdata('ses_id',$data['nip']);
-                    $this->session->set_userdata('ses_nama',$data['nama']);
+                    $this->session->set_userdata('ses_nama',$data['nama_dosen']);
+                    //echo $_SESSION['ses_nama'];
                     redirect('Page');
  
                 }else if($data['status']=='Dosen'){ //akses dosen
                     $this->session->set_userdata('akses','Dosen');
                     $this->session->set_userdata('ses_id',$data['nip']);
-                    $this->session->set_userdata('ses_nama',$data['nama']);
+                    $this->session->set_userdata('ses_nama',$data['nama_dosen']);
                     redirect('Page');
                 
                 }else{ //akses reviewer
                     $this->session->set_userdata('akses','Reviewer');
                     $this->session->set_userdata('ses_id',$data['nip']);
-                    $this->session->set_userdata('ses_nama',$data['nama']);
+                    $this->session->set_userdata('ses_nama',$data['nama_dosen']);
                     redirect('Page');
                 
                 }
@@ -46,7 +47,7 @@ class Login_ta extends CI_Controller{
                     $this->session->set_userdata('masuk',TRUE);
                             $this->session->set_userdata('akses','Mahasiswa');
                             $this->session->set_userdata('ses_id',$data['nim']);
-                            $this->session->set_userdata('ses_nama',$data['nama']);
+                            $this->session->set_userdata('ses_nama',$data['nama_mhs']);
                             // echo 'a';
                             // return;
                             redirect('Page');

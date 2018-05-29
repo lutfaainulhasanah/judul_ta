@@ -1,31 +1,33 @@
-<form name="form1" method="post" action="" enctype="multipart/form-data">
+
+  <h4>Tambah Daftar Penelitian</h4>
   <div align="center">
-    <p>FORM INPUT JUDUL PENELITIAN/p>
-    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <p>
+      <form action="input" method="post">
+      <table style="margin:20px auto;">
       <tr>
-        <td width="125">Id_Penelitian</td>
-        <td width="140"><label for="id_penelitian"></label>
-        <input type="text" name="id_penelitian" id="id_penelitian"required></td>
+        <td>Id Penelitian</td>
+        <td><input type="text" name="nim" value="<?php if(isset($data)) { echo $data[0]->id_penelitian; } ?>"></td>
       </tr>
       <tr>
-        <td width="125">NIP</td>
-        <td width="140"><label for="nip"></label>
-        <input type="text" name="nip" id="nip" required></td>
+        <td>NIP</td>
+        <td><select name="prodi"><?php foreach ($nama_dosen as $row ) {?>
+        <option value="<?php echo $row->nip;?>"><?php echo $row->dosen;?></option>
+        <?php } ?></select></td>
       </tr>
       <tr>
-        <td width="125">Judul</td>
-        <td width="140"><label for="judul"></label>
-        <input type="text" name="judul" id="judul" required></td>
+        <td>Juudl</td>
+        <td><input type="text" name="Judul" value="<?php if(isset($data)) { echo $data[0]->judul; } ?>"></td>
       </tr>
       <tr>
         <td>Kuota</td>
-        <td><label for="kuota"></label>
-        <input type="file" name="kuota" id="kuota" required></td>
+        <td><input type="text" name="judul" value="<?php if(isset($data)) { echo $data[0]->judul; } ?>"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" name="btntambah" value="Tambah">
+          <a href="<?php echo base_url()?>Penelitian">Kembali</a></td>
       </tr>
     </table>
+  </form> 
+    </p>
   </div>
-  <p align="center">
-    <button class='btn btn-mini btn-primary'>Tambah</button>
-    <button class='btn btn-mini btn-primary' onclick="javascript: window.location.href=''">kembali</button>
-  </p>
-</form>
