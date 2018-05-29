@@ -7,24 +7,32 @@
 <h1>Judul Penelitian</h1>
 <table border="1">
     <tr>
-        <td>Baris 1, Kolom 1</td>
-        <td>Baris 1, Kolom 2</td>
-        <td>Baris 1, Kolom 3</td>
+        <td>Id Penelitian</td>
+        <td>NIP</td>
+        <td>Judul Penelitian</td>
+        <td>Kuota</td>
+        <td>Opsi</td>
     </tr>
     <tr>
-        <td>Baris 2, Kolom 1</td>
-        <td>Baris 2, Kolom 2</td>
-        <td> Baris 2, Kolom 3</td>
+        <td>&nbsp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button>Update</button><button>Delete</button></td>
     </tr>
     <tr>
-        <td> Baris 3, Kolom 1</td>
-        <td> Baris 3, Kolom 2</td>
-        <td> Baris 3, Kolom 3</td>
+        <td>&nbsp </td>
+        <td> </td>
+        <td> </td>
+        <td></td>
+        <td><button>Update</button><button>Delete</button> </td>
     </tr>
     <tr>
-        <td> Baris 4, Kolom 1</td>
-        <td> Baris 4, Kolom 2</td>
-        <td> Baris 4, Kolom 3</td>
+        <td>&nbsp </td>
+        <td> </td>
+        <td> </td>
+        <td></td>
+        <td> <button>Update</button><button>Delete</button></td>
     </tr>
 </table><br>
      <button>Insert</button>

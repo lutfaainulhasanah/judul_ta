@@ -7,24 +7,52 @@
 <h1>Usulan Judul</h1>
 <table border="1">
     <tr>
-        <td>Baris 1, Kolom 1</td>
-        <td>Baris 1, Kolom 2</td>
-        <td>Baris 1, Kolom 3</td>
+        <td>NIM</td>
+        <td>Golongan</td>
+        <td>Prodi</td>
+        <td>NIP</td>
+        <td>Judul</td>
+        <td>Judul Dosen</td>
+        <td>Ringkasan</td>
+        <td>Tugas</td>
+        <td>Catatan</td>
+        <td>Opsi</td>
     </tr>
     <tr>
-        <td>Baris 2, Kolom 1</td>
-        <td>Baris 2, Kolom 2</td>
-        <td> Baris 2, Kolom 3</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td><button>Update</button><button>Delete</button></td>
     </tr>
     <tr>
-        <td> Baris 3, Kolom 1</td>
-        <td> Baris 3, Kolom 2</td>
-        <td> Baris 3, Kolom 3</td>
+         <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td><button>Update</button><button>Delete</button></td>
     </tr>
     <tr>
-        <td> Baris 4, Kolom 1</td>
-        <td> Baris 4, Kolom 2</td>
-        <td> Baris 4, Kolom 3</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td><button>Update</button><button>Delete</button></td>
     </tr>
 </table><br>
      <button>Insert</button>
