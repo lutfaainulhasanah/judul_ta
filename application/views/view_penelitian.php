@@ -22,7 +22,7 @@
             <td><?php echo $row->nip; ?></td>
             <td><?php echo $row->judul_penelitian;?></td>
             <td><?php echo $row->kuota;?></td>
-            <td><a href="<?php echo base_url(); ?>Usulan_mhs/delete/<?php echo $row->id_penelitian;?>">Hapus</a></td>
+            <td><a href="<?php echo base_url(); ?>Penelitian_dosen/delete/<?php echo $row->id_penelitian;?>">Hapus</a></td>
             
         </tr>
         <?php endforeach;?>
