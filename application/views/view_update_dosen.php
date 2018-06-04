@@ -8,7 +8,8 @@
 <p align="center">
 <?php
     foreach ($data as $row): ?>
-		<form action="<?php echo base_url()?>Daftar_dosen/update" method="post">		
+		<form action="<?php echo base_url()?>Daftar_dosen/update" method="post">
+		<input name="nipOld" value="<?php echo $id; ?>" style="visibility: hidden"/>		
 <table border="1" align="center">
 
           <tr>
@@ -22,15 +23,17 @@
             <input type="text" name="nama"value="<?php echo $row->nama_dosen;?>">  </td>
           </tr>
           <tr>
-            <td>Prodi</td>
-            <td><label for="prodi"></label>
-            <input type="text" name="prodi" value="<?php echo $row->prodi;?>"> </td>
-          </tr>
-          <tr>
-            <td>Status</td>
+			<td>Prodi</td>
+			<td><select name="prodi"><?php foreach ($prodi as $ros ) {
+				echo '<option value="'.$ros->id_prodi.'">'.$ros->prodi.'</option>';
+			}
+		echo '</select>';?></td>
+		</tr>
+		<tr>
+<td>Status</td>
             <td><label for="status"></label>
             <input type="text" name="status" value="<?php echo $row->status;?>"> </td>
-          </tr>
+          </tr>	       
 </table>
 </div>
   <td><p align="center">

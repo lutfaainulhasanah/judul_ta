@@ -18,6 +18,7 @@ class Daftar_dosen extends CI_Controller{
  	 	$id = $this->uri->segment(3);
 		//var_dump($id);
 		//echo $id;
+		$a['prodi'] = $this->Model_Dosen->get_prodi();
 		$a['data'] = $this->Model_Dosen->get_data_edit($id);
 		$a['id'] = $id;
       $this->load->view('view_update_dosen',$a);
@@ -25,23 +26,21 @@ class Daftar_dosen extends CI_Controller{
 	
 	function update(){
 		$id = $this->input->post('nip');
-		$idOld = $this->uri->segment(3);
-		$nama_dosen = $this->input->post('nama_dosen');
+		$idOld = $this->input->post('nipOld');
+		$nama_dosen = $this->input->post('nama');
 		$prodi = $this->input->post('prodi');
 		$status = $this->input->post('status');
  
 		$data = array(
 			'nip' =>$id,
+			'nipOld' =>$idOld,
 			'nama_dosen' => $nama_dosen,
 			'prodi' => $prodi,
 			'status' => $status
 			);
  
-	$where = array(
-		'nip' => $id
-	);
- 
-	$this->Model_Dosen->update($where,$data,'dosen');
+ 	var_dump($data);
+	$this->Model_Dosen->update($data);
 	redirect('Daftar_dosen/dosen');
 		
 }
