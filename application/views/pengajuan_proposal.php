@@ -3,6 +3,7 @@
 <head>
 	<title>Pengajuan Proposal</title>
 </head>
+
 <body>
 	<header>
         <center>
@@ -16,13 +17,16 @@
 			<input type="text" name="nama" placeholder="nama lengkap" />
 		</p>
 		<p>
+	<td>Prodi : </td>
+		<td><select name="prodi">
+		<option value>prodi</option>
+		</select></td>
+	</p>
+		</p>
+		<p>
 		<td>Golongan : </td>
 		<td><select name="golongan">
-		<option value>-</option>
-		<option value="a">Golongan A</option>
-		<option value="b">Golongan B</option>
-		<option value="c">Golongan C</option>
-		<option value="d">Golongan D</option>
+		<option value>golongan</option>
 		</select></td>
 	</p>
 		<p>
