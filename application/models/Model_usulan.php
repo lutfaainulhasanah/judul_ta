@@ -11,6 +11,9 @@ Class Model_usulan extends CI_Model{
 		$query = $this->db->query("SELECT * FROM judul");
 		return $query->result();
 	}
+	function edit_data($where,$table){		
+	return $this->db->get_where($table,$where);
+}
 
 }
 ?>

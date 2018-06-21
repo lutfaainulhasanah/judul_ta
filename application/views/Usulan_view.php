@@ -34,7 +34,9 @@
         <td><?php echo $j->ringkasan ?></td>
         <td><?php echo $j->tugas ?></td>
         <td><?php echo $j->catatan ?></td>
-        <td><a href="">UPDATE</a></td>
+        <td>
+            <?php echo anchor('Usulan_dosen/edit/'.$j->id_judul,'Edit'); ?>
+            </td>
     </tr>
     <?php } ?>
 

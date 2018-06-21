@@ -15,5 +15,10 @@ class Usulan_dosen extends CI_Controller{
 		$this->load->view('Usulan_view',$a);
 
     }
+    function edit($id_judul){
+		$where = array('id_judul' => $id_judul);
+		$data['judul'] = $this->Model_usulan->edit_data($where,'judul')->result();
+		$this->load->view('editusulan_view',$data);
+	}
 }
 ?>
