@@ -9,7 +9,7 @@
 		
 	</center>
 	<?php foreach($judul as $j){ ?>
-	<form action="<?php echo base_url(). 'Usulan_dosen/Edit'; ?>" method="post">
+	<form action="<?php echo base_url(). 'Usulan_dosen/Update'; ?>" method="post">
 		<table style="margin:20px auto;">
 
 
