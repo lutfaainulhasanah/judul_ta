@@ -87,5 +87,5 @@ class Model_Dosen extends CI_Model {
 		$this->db->update($table,$data);
 	}
 	
-	
+	}
 ?>
