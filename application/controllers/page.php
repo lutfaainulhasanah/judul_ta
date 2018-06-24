@@ -46,7 +46,7 @@ class Page extends CI_controller{
   function usulan_judul(){
     // function ini hanya boleh diakses oleh admin dan dosen
     if($this->session->userdata('akses')=='Koordinator' || $this->session->userdata('akses')=='Reviewer'){
-      $this->load->view('v_usulan_judul');
+      $this->load->view('Judul');
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
     }
@@ -63,10 +63,10 @@ class Page extends CI_controller{
  
   }
 
-  function judul(){
+  function usulan(){
     // function ini hanya boleh diakses oleh admin dan dosen
     if($this->session->userdata('akses')=='Mahasiswa'){
-      $this->load->view('v_judul');
+      $this->load->view('Judul');
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
     }
@@ -76,7 +76,7 @@ class Page extends CI_controller{
   function proposal(){
     // function ini hanya boleh diakses oleh admin dan dosen
     if($this->session->userdata('akses')=='Mahasiswa'){
-      $this->load->view('v_proposal');
+      $this->load->view('Proposal');
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
     } 

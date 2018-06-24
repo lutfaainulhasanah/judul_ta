@@ -36,7 +36,7 @@
     </tr>
     <tr>
       <td>Kuota</td>
-      <td><input type="text" name="kuota" value="<?php echo @$user[0]['kuota']; ?>"></td>
+      <td><input type="textarea" name="kuota" value="<?php echo @$user[0]['kuota']; ?>"></td>
     </tr>
     <tr>
         <td></td>

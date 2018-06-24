@@ -12,8 +12,8 @@ class Penelitian_dosen extends CI_Controller{
 		$this->load->view('view_penelitian',$a);
     }
  function delete($id_penelitian){
-		$this->db->delete('penelitian', array('id_penelitian' => $nim));
-		redirect('Penelitian_dosen');
+		$this->db->delete('penelitian', array('id_penelitian' => $id_penelitian));
+		redirect('Penelitian_dosen/index');
 	}
 
 }

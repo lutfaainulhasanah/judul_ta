@@ -1,43 +1,43 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Inang: 127.0.0.1
--- Waktu pembuatan: 28 Mei 2018 pada 08.37
--- Versi Server: 5.5.27
--- Versi PHP: 5.4.7
+-- Host: 127.0.0.1
+-- Generation Time: Jun 24, 2018 at 03:36 AM
+-- Server version: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Basis data: `judul_ta`
+-- Database: `judul_ta`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
-CREATE TABLE IF NOT EXISTS `dosen` (
+CREATE TABLE `dosen` (
   `nip` varchar(25) NOT NULL,
   `nama_dosen` varchar(50) NOT NULL,
   `id_prodi` varchar(25) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `status` varchar(15) NOT NULL,
-  PRIMARY KEY (`nip`),
-  KEY `id_prodi` (`id_prodi`)
+  `status` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
 INSERT INTO `dosen` (`nip`, `nama_dosen`, `id_prodi`, `password`, `status`) VALUES
@@ -62,17 +62,16 @@ INSERT INTO `dosen` (`nip`, `nama_dosen`, `id_prodi`, `password`, `status`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `golongan`
+-- Table structure for table `golongan`
 --
 
-CREATE TABLE IF NOT EXISTS `golongan` (
+CREATE TABLE `golongan` (
   `id_gol` varchar(5) NOT NULL,
-  `golongan` varchar(5) NOT NULL,
-  PRIMARY KEY (`id_gol`)
+  `golongan` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `golongan`
+-- Dumping data for table `golongan`
 --
 
 INSERT INTO `golongan` (`id_gol`, `golongan`) VALUES
@@ -85,10 +84,10 @@ INSERT INTO `golongan` (`id_gol`, `golongan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `judul`
+-- Table structure for table `judul`
 --
 
-CREATE TABLE IF NOT EXISTS `judul` (
+CREATE TABLE `judul` (
   `id_judul` varchar(5) NOT NULL,
   `nim` varchar(10) NOT NULL,
   `id_gol` varchar(5) NOT NULL,
@@ -96,34 +95,31 @@ CREATE TABLE IF NOT EXISTS `judul` (
   `nip` varchar(25) NOT NULL,
   `judul` varchar(50) NOT NULL,
   `judul_dosen` varchar(50) NOT NULL,
-  `ringkasan` text NOT NULL,
-  `tugas` varchar(100) NOT NULL,
-  `catatan` text NOT NULL,
-  PRIMARY KEY (`id_judul`),
-  KEY `nim` (`nim`,`id_gol`,`id_prodi`,`nip`),
-  KEY `nip` (`nip`),
-  KEY `id_gol` (`id_gol`),
-  KEY `id_prodi` (`id_prodi`)
+  `ringkasan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `judul`
+--
+
+INSERT INTO `judul` (`id_judul`, `nim`, `id_gol`, `id_prodi`, `nip`, `judul`, `judul_dosen`, `ringkasan`) VALUES
+('1', 'E31150493', 'G001', 'P001', '197008311998031001', 'a', 'a', 'kiki');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
-CREATE TABLE IF NOT EXISTS `mahasiswa` (
+CREATE TABLE `mahasiswa` (
   `nim` varchar(10) NOT NULL,
   `nama_mhs` varchar(50) NOT NULL,
   `id_gol` varchar(10) NOT NULL,
-  `id_prodi` varchar(25) NOT NULL,
-  PRIMARY KEY (`nim`),
-  KEY `id_prodi` (`id_prodi`),
-  KEY `id_gol` (`id_gol`)
+  `id_prodi` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama_mhs`, `id_gol`, `id_prodi`) VALUES
@@ -157,32 +153,29 @@ INSERT INTO `mahasiswa` (`nim`, `nama_mhs`, `id_gol`, `id_prodi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penelitian`
+-- Table structure for table `penelitian`
 --
 
-CREATE TABLE IF NOT EXISTS `penelitian` (
+CREATE TABLE `penelitian` (
   `id_penelitian` varchar(5) NOT NULL,
   `nip` varchar(25) NOT NULL,
   `judul_penelitian` varchar(50) NOT NULL,
-  `kuota` int(5) NOT NULL,
-  PRIMARY KEY (`id_penelitian`),
-  KEY `nip` (`nip`)
+  `kuota` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `prodi`
+-- Table structure for table `prodi`
 --
 
-CREATE TABLE IF NOT EXISTS `prodi` (
+CREATE TABLE `prodi` (
   `id_prodi` varchar(5) NOT NULL,
-  `prodi` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_prodi`)
+  `prodi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `prodi`
+-- Dumping data for table `prodi`
 --
 
 INSERT INTO `prodi` (`id_prodi`, `prodi`) VALUES
@@ -193,19 +186,35 @@ INSERT INTO `prodi` (`id_prodi`, `prodi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `proposal`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `proposal` (
+  `id_proposal` varchar(5) NOT NULL,
+  `nim` varchar(10) NOT NULL,
+  `id_prodi` varchar(5) NOT NULL,
+  `id_gol` varchar(5) NOT NULL,
+  `cover` text NOT NULL,
+  `bab1` text NOT NULL,
+  `bab2` text NOT NULL,
+  `bab3` text NOT NULL,
+  `pengajuan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
   `username` varchar(10) NOT NULL,
   `password` varchar(25) NOT NULL,
-  `status` enum('koordinator','reviewer','dosen','mahasiswa') NOT NULL,
-  KEY `nim` (`username`),
-  KEY `username` (`username`)
+  `status` enum('koordinator','reviewer','dosen','mahasiswa') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `status`) VALUES
@@ -218,11 +227,75 @@ INSERT INTO `user` (`username`, `password`, `status`) VALUES
 ('E31162041', 'E31162041', 'mahasiswa');
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Indexes for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `judul`
+-- Indexes for table `dosen`
+--
+ALTER TABLE `dosen`
+  ADD PRIMARY KEY (`nip`),
+  ADD KEY `id_prodi` (`id_prodi`);
+
+--
+-- Indexes for table `golongan`
+--
+ALTER TABLE `golongan`
+  ADD PRIMARY KEY (`id_gol`);
+
+--
+-- Indexes for table `judul`
+--
+ALTER TABLE `judul`
+  ADD PRIMARY KEY (`id_judul`),
+  ADD KEY `nim` (`nim`,`id_gol`,`id_prodi`,`nip`),
+  ADD KEY `nip` (`nip`),
+  ADD KEY `id_gol` (`id_gol`),
+  ADD KEY `id_prodi` (`id_prodi`);
+
+--
+-- Indexes for table `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`nim`),
+  ADD KEY `id_prodi` (`id_prodi`),
+  ADD KEY `id_gol` (`id_gol`);
+
+--
+-- Indexes for table `penelitian`
+--
+ALTER TABLE `penelitian`
+  ADD PRIMARY KEY (`id_penelitian`),
+  ADD KEY `nip` (`nip`);
+
+--
+-- Indexes for table `prodi`
+--
+ALTER TABLE `prodi`
+  ADD PRIMARY KEY (`id_prodi`);
+
+--
+-- Indexes for table `proposal`
+--
+ALTER TABLE `proposal`
+  ADD PRIMARY KEY (`id_proposal`),
+  ADD KEY `nim` (`nim`),
+  ADD KEY `id_prodi` (`id_prodi`),
+  ADD KEY `id_gol` (`id_gol`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD KEY `nim` (`username`),
+  ADD KEY `username` (`username`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `judul`
 --
 ALTER TABLE `judul`
   ADD CONSTRAINT `judul_ibfk_1` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`),
@@ -231,23 +304,32 @@ ALTER TABLE `judul`
   ADD CONSTRAINT `judul_ibfk_4` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`);
 
 --
--- Ketidakleluasaan untuk tabel `mahasiswa`
+-- Constraints for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`id_gol`) REFERENCES `golongan` (`id_gol`),
   ADD CONSTRAINT `mahasiswa_ibfk_2` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`);
 
 --
--- Ketidakleluasaan untuk tabel `penelitian`
+-- Constraints for table `penelitian`
 --
 ALTER TABLE `penelitian`
   ADD CONSTRAINT `penelitian_ibfk_1` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`);
 
 --
--- Ketidakleluasaan untuk tabel `user`
+-- Constraints for table `proposal`
+--
+ALTER TABLE `proposal`
+  ADD CONSTRAINT `proposal_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `proposal_ibfk_2` FOREIGN KEY (`id_gol`) REFERENCES `golongan` (`id_gol`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `proposal_ibfk_3` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`username`) REFERENCES `mahasiswa` (`nim`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

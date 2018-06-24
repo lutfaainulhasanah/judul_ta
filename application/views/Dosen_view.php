@@ -32,9 +32,7 @@
 		<td><?php echo $row->nama_dosen;?></td>
 		<td><?php echo $row->prodi;?></td>
 		<td><?php echo $row->status;?></td>
-    	<td><p align="center">
-<a href="<?php echo base_url(); ?>Daftar_dosen/update/<?php echo $row->nip;?>"> <button class='btn btn-mini btn-primary'>Update</button></a>
-  </p></td>
+    	<td><?php echo anchor('Daftar_dosen/edit/'.$row->nip,'Edit'); ?></td>
     </tr>
     <?php
     endforeach;?>

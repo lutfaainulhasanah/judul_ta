@@ -15,11 +15,10 @@ class Usulan_mhs extends CI_Controller{
     }
     
 
-   function delete($id_judul){
-		$this->db->delete('judul', array('id_judul' => $nim));
-		redirect('Usulan_mhs');
-	}
-
+  function delete($id_judul){
+        $this->db->delete('judul', array('id_judul' => $id_judul));
+        redirect('form_usulan_proposal/usulan/index');
+    }
  
 }
 ?>
