@@ -17,33 +17,33 @@
                         <div class="table-responsive">
 <h1>Judul Penelitian</h1>
 <table border="1" class="table table-striped table-bordered table-hover" id="dataTables-example">
-    <thead>
+    
     <tr>
         <th>Id Penelitian</th>
         <th>NIP</th>
         <th>Judul Penelitian</th>
-        <th>Kuota</th>
-        <th colspan="2">Opsi</th>
+        <th>Status</th>
     </tr>
-    </thead>
-    <tbody>
+    
+    
      <?php
        
-        foreach ($penelitian as $row) : ?>
+        foreach ($data as $row) : ?>
         <tbody>
         <tr class="odd gradeX">
-            <td><?php echo $row->id_penelitian; ?></td>
-            <td><?php echo $row->nip; ?></td>
-            <td><?php echo $row->judul_penelitian;?></td>
-            <td><?php echo $row->kuota;?></td>
-            <td><button class="btn btn-primary"><i class="icon-pencil icon-white"><a href="<?php echo base_url(); ?>Page/edit/<?php echo $row->id_penelitian;?>"></i>Edit</a></button></td>
-            <td><button class="btn btn-danger"><i class="icon-remove icon-white"><a href="<?php echo base_url(); ?>Page/delete/<?php echo $row->id_penelitian;?>">Hapus</a></i></button></td>
-            
+            <td><?php echo $row->nim; ?></td>
+            <td><?php echo $row->nama_mhs; ?></td>
+            <td><?php echo $row->judul;?></td>
+            <td><select>
+                <option value="1">Choose Here</option>
+                <option value="2">Terima</option>
+                <option value="">Tolak</option>
+            </select></td>
+                        
         </tr>
-    </tbody>
+    
         <?php endforeach;?>
 </table><br>
-     <button class="btn btn-primary"><i class="icon-plus icon-white"><a href="<?php echo base_url()?>Page/input"> Insert</a></i></button>
 </div>
         
                             </div>

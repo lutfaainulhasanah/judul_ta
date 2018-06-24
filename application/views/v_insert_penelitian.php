@@ -1,31 +1,61 @@
-<form name="form1" method="post" action="" enctype="multipart/form-data">
+<div id="content">
+             
+            <div class="inner" style="min-height: 70px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Welcome back <?php echo $this->session->userdata('ses_nama');?></h2>
+                    </div>
+                </div>
+                  <hr />
+                  <div class="row">
+                   <div class="col-lg-12">
+                    
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                            Sales   Stacking
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+  <h4>Tambah Daftar Penelitian</h4>
   <div align="center">
-    <p>FORM INPUT JUDUL PENELITIAN/p>
-    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <p>
+      <form action="input" method="post">
+      <table style="margin:20px auto;" class="table table-striped table-bordered table-hover" id="dataTables-example">
       <tr>
-        <td width="125">Id_Penelitian</td>
-        <td width="140"><label for="id_penelitian"></label>
-        <input type="text" name="id_penelitian" id="id_penelitian"required></td>
+        <td>Id Penelitian</td>
+        <td><input type="text" name="id_penelitian" value="<?php $kodeunik; ?>"></td>
       </tr>
       <tr>
-        <td width="125">NIP</td>
-        <td width="140"><label for="nip"></label>
-        <input type="text" name="nip" id="nip" required></td>
+        <td>NIP</td>
+        <td><input type="text" name="nip" value="<?php echo $this->session->userdata('ses_id');?>"></td>
       </tr>
       <tr>
-        <td width="125">Judul</td>
-        <td width="140"><label for="judul"></label>
-        <input type="text" name="judul" id="judul" required></td>
+        <td>Juudl</td>
+        <td><input type="text" name="judul_penelitian" value="<?php if(isset($data)) { echo $data[0]->judul_penelitian; } ?>"></td>
       </tr>
       <tr>
         <td>Kuota</td>
-        <td><label for="kuota"></label>
-        <input type="file" name="kuota" id="kuota" required></td>
+        <td><input type="text" name="kuota" value="<?php if(isset($data)) { echo $data[0]->kuota; } ?>"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="submit" name="btntambah" class="btn btn-primary"><i class="icon-save icon-white"></i> Simpan</button>
+          <button type="submit" name="btnedit" class="btn btn-primary"><a href="<?php echo base_url()?>Page/penelitian"></i>Kembali</a></button></td>
       </tr>
     </table>
+  </form> 
+    </p>
   </div>
-  <p align="center">
-    <button class='btn btn-mini btn-primary'>Tambah</button>
-    <button class='btn btn-mini btn-primary' onclick="javascript: window.location.href=''">kembali</button>
-  </p>
-</form>
+  </div>
+        
+                            </div>
+                    </div>
+                </div>
+                     
+                </div>
+                 <!--END STACKING CHART SCETION  -->                
+            </div>
+
+        </div>
+        <!--END PAGE CONTENT -->
+    </div>

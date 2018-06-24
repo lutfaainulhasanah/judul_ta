@@ -2,16 +2,18 @@
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<!-- BEGIN HEAD -->
+
+ <!-- BEGIN HEAD -->
 <head>
-    <meta charset="UTF-8" />
-    <title>Pengajuan Judul Tugas Akhir</title>
+     <meta charset="UTF-8" />
+    <title>BCORE Admin Dashboard Template | Data Tables</title>
      <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
      <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
+    <!-- GLOBAL STYLES -->
     <!-- GLOBAL STYLES -->
     <link rel="stylesheet" href="<?php echo base_url().'assets/assets/plugins/bootstrap/css/bootstrap.css'?>" />
     <link rel="stylesheet" href="<?php echo base_url().'assets/assets/css/main.css'?>" />
@@ -21,27 +23,23 @@
     <!--END GLOBAL STYLES -->
 
     <!-- PAGE LEVEL STYLES -->
-    <link href="<?php echo base_url().'assets/assets/css/layout2.css'?>" rel="stylesheet" />
-       <link href="<?php echo base_url().'assets/assets/plugins/flot/examples/examples.css'?>" rel="stylesheet" />
-       <link rel="stylesheet" href="<?php echo base_url().'assets/assets/plugins/timeline/timeline.css'?>" />
+    <link href="<?php echo base_url().'assets/assets/plugins/dataTables/dataTables.bootstrap.css'?>" rel="stylesheet" />
     <!-- END PAGE LEVEL  STYLES -->
-     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-
-    <!-- END HEAD -->
-
-    <!-- BEGIN BODY -->
+     <!-- END HEAD -->
+     <!-- BEGIN BODY -->
 <body class="padTop53 " >
 
-    <!-- MAIN WRAPPER -->
-    <div id="wrap" >
-        
+     <!-- MAIN WRAPPER -->
+    <div id="wrap">
 
-        <!-- HEADER SECTION -->
+
+         <!-- HEADER SECTION -->
         <div id="top">
 
             <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
@@ -52,8 +50,7 @@
                 <header class="navbar-header">
 
                     <a href="index.html" class="navbar-brand">
-                    <img src="<?php echo base_url().'assets/assets/img/lg.png'?>" alt="" />
-                                                </a>
+                    <img src="<?php echo base_url().'assets/assets/img/lg.png'?>" alt="" /></a>
                 </header>
                 <!-- END LOGO SECTION -->
                 <ul class="nav navbar-top-links navbar-right">
@@ -66,7 +63,6 @@
                         </a>
 
                         <ul class="dropdown-menu dropdown-user">
-                            <li class="divider"></li>
                             <li><a href="<?php echo base_url('Login_ta')?>"><i class="icon-signout"></i> Logout </a>
                             </li>
                         </ul>
@@ -78,3 +74,4 @@
             </nav>
 
         </div>
+        <!-- END HEADER SECTION -->
