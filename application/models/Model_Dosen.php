@@ -86,5 +86,11 @@ class Model_Dosen extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
+<<<<<<< HEAD
 }
 	?>
+=======
+	
+	}
+?>
+>>>>>>> 65c67a5776296cfa6748c9e19fed56a2d9f75c84
