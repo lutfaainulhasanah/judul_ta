@@ -25,7 +25,7 @@
             <td><?php echo $row->bab3; ?></td>
             <td><?php echo $row->pengajuan; ?></td>
             <td>
-                <a href="<?php echo "proposal/hapus/" . $row->id_judul; ?>">Hapus</a>
+                <a href="<?php echo "proposal/hapus/" . $row->id_proposal; ?>">Hapus</a>
             </td>
         </tr>
         <?php

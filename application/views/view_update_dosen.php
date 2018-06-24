@@ -33,9 +33,7 @@
 		<td>Status</td>
             <td><label for="status"></label>
             <input type="text" name="status"value="<?php echo $row->status;?>">  </td>
-              </tr>
-       
-      	  
+              </tr>  
         <tr>
             <td>Kuota</td>
             <td><label for="kuota"></label>
