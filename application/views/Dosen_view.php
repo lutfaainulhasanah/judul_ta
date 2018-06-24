@@ -11,6 +11,7 @@
         <td>Nama Dosen</td>
         <td>Prodi</td>
         <td> Status</td>
+        <td>Kuota</td>
         <td><div align="center">opsi</div></td>
     </tr>
     <tr>
@@ -20,6 +21,7 @@
 		<td><?php echo $row->nama_dosen;?></td>
 		<td><?php echo $row->prodi;?></td>
 		<td><?php echo $row->status;?></td>
+		<td><?php echo $row->kuota;?></td>
     	<td><?php echo anchor('Daftar_dosen/edit/'.$row->nip,'Edit'); ?></td>
     </tr>
     <?php

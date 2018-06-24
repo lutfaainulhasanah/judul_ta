@@ -6,7 +6,7 @@ class Model_Dosen extends CI_Model {
     }
     
 	function get_data(){
-		$query = $this->db->query("SELECT dosen.nip, dosen.nama_dosen, prodi.prodi, dosen.status FROM dosen,prodi where dosen.id_prodi = prodi.id_prodi ");
+		$query = $this->db->query("SELECT dosen.nip, dosen.nama_dosen, prodi.prodi, dosen.status, dosen.kuota FROM dosen,prodi where dosen.id_prodi = prodi.id_prodi ");
 		return $query->result();
 	}
 	function get_prodi(){
@@ -14,7 +14,7 @@ class Model_Dosen extends CI_Model {
 		return $query->result();
 	}
 	function get_data_edit($id){
-		$query = $this->db->query("SELECT * FROM(SELECT dosen.nip, dosen.nama_dosen, prodi.prodi, dosen.status FROM dosen,prodi where dosen.id_prodi = prodi.id_prodi)as a where a.nip='$id' ");
+		$query = $this->db->query("SELECT * FROM(SELECT dosen.nip, dosen.nama_dosen, prodi.prodi, dosen.status,dosen.kuota FROM dosen,prodi where dosen.id_prodi = prodi.id_prodi)as a where a.nip='$id' ");
 	return $query->result();
 	}
 	/*function update($where,$data,$table){
@@ -23,7 +23,7 @@ class Model_Dosen extends CI_Model {
 	}*/
 	function update($data){
 
-		$query = $this->db->query("UPDATE dosen SET nip =".$data['nip'].", nama_dosen = '".$data['nama_dosen']."', id_prodi = '".$data['prodi']."', status = '".$data['status']."' WHERE nip = ".$data['nipOld']."");
+		$query = $this->db->query("UPDATE dosen SET nip =".$data['nip'].", nama_dosen = '".$data['nama_dosen']."', id_prodi = '".$data['prodi']."', status = '".$data['status']."', kuota = '".$data['kuota']."' WHERE nip = ".$data['nipOld']."");
 		return true;
 	}	
 	}

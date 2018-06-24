@@ -30,13 +30,15 @@ class Daftar_dosen extends CI_Controller{
 		$nama_dosen = $this->input->post('nama');
 		$prodi = $this->input->post('prodi');
 		$status = $this->input->post('status');
+		$kuota = $this->input->post('kuota');
  
 		$data = array(
 			'nip' =>$id,
 			'nipOld' =>$idOld,
 			'nama_dosen' => $nama_dosen,
 			'prodi' => $prodi,
-			'status' => $status
+			'status' => $status,
+			'kuota' => $kuota
 			);
  
  	var_dump($data);

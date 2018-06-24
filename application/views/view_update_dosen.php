@@ -30,10 +30,17 @@
 		echo '</select>';?></td>
 		</tr>
 		<tr>
-<td>Status</td>
+		<td>Status</td>
             <td><label for="status"></label>
-            <input type="text" name="status" value="<?php echo $row->status;?>"> </td>
-          </tr>	       
+            <input type="text" name="status"value="<?php echo $row->status;?>">  </td>
+              </tr>
+       
+      	  
+        <tr>
+            <td>Kuota</td>
+            <td><label for="kuota"></label>
+            <input type="text" name="kuota"value="<?php echo $row->kuota;?>">  </td>
+          </tr>     
 </table>
 </div>
   <td><p align="center">
