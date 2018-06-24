@@ -31,6 +31,11 @@ class Model_Dosen extends CI_Model {
 		return $query->result();
 	}
 
+	function input($data = array()){
+		return $this->db->query('penelitian',$data);
+		
+	}
+
 	function get_data_edit($id){
 		$query = $this->db->query("SELECT * FROM penelitian where id_penelitian='$id'");
 		return $query->result_array();
@@ -45,7 +50,25 @@ class Model_Dosen extends CI_Model {
 		$this->db->where('id_penelitian',$id);
 		return $this->db->update('penelitian',$data);
 	}
+
+	public function kode_oto(){
+		$this->db->select('RIGHT(penelitian.id_penelitian,2) as kode', FALSE);
+		$this->db->order_by ('id_penelitian','DESC');
+		$this->db->limit(1);
+		$query = $this->db->get('penelitian'); // cek dulu apakah sudah ada kode di tabel
+		if($query->num_rows() <> 0){
+			//jika kode sudah ada
+			$data = $query->row();
+			$kode = intval($data->kode) + 1;
+		}else{
+			//jika kode belum ada
+			$kode = 1;
+		}
 		
+		$kodemax = str_pad($kode, 2, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit 0
+		$kodejadi = "PD".$kodemax;
+		return $kodejadi;
+	}
 	}
 	
 	

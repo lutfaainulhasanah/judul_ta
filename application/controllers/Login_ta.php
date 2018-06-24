@@ -46,8 +46,8 @@ class Login_ta extends CI_Controller{
                             $data=$cek_mahasiswa->row_array();
                     $this->session->set_userdata('masuk',TRUE);
                             $this->session->set_userdata('akses','Mahasiswa');
-                            $this->session->set_userdata('ses_id',$data['nim']);
-                            $this->session->set_userdata('ses_nama',$data['nama_mhs']);
+                            $this->session->set_userdata('ses_id',$data['username']);
+                            $this->session->set_userdata('ses_nama',$data['nama']);
                             // echo 'a';
                             // return;
                             redirect('Page');

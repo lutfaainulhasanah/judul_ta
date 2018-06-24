@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Daftar Dosen</title>
-</head>
-<body>
+<div id="content">
+             
+            <div class="inner" style="min-height: 70px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Welcome back <?php echo $this->session->userdata('ses_nama');?></h2>
+                    </div>
+                </div>
+                  <hr />
+                  <div class="row">
+                   <div class="col-lg-12">
+                    
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                            Sales   Stacking
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
 <h1 align="center">Daftar Dosen</h1>
-<table border="1" align="center">
+<table border="1" align="center" class="table table-striped table-bordered table-hover" id="dataTables-example">
     <tr>
         <td>NIP</td>
         <td>Nama Dosen</td>
@@ -27,5 +39,16 @@
     <?php
     endforeach;?>
 </table>
-</body>
-</html>
+</div>
+        
+                            </div>
+                    </div>
+                </div>
+                     
+                </div>
+                 <!--END STACKING CHART SCETION  -->                
+            </div>
+
+        </div>
+        <!--END PAGE CONTENT -->
+    </div>
