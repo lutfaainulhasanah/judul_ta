@@ -45,8 +45,11 @@ class Page extends CI_controller{
 
   function usulan_judul(){
     // function ini hanya boleh diakses oleh admin dan dosen
+    $a= array(
+      'uniqid' => 'usulan_view',
+      'data'=>$this->Model_Dosen->get_usulan());
     if($this->session->userdata('akses')=='Koordinator' || $this->session->userdata('akses')=='Reviewer'){
-      $this->load->view('Judul');
+      $this->load->view('content',$a);
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
     }

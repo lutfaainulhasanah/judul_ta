@@ -74,6 +74,18 @@ class Model_Dosen extends CI_Model {
 		$query = $this->db->query("SELECT judul.nim, mahasiswa.nama_mhs, judul.judul FROM judul,mahasiswa where judul.nim = mahasiswa.nim ");
 		return $query->result();
 	}
+
+	function get_usulan(){
+		$query = $this->db->query("SELECT * FROM judul");
+		return $query->result();
+	}
+	function edit_usulan($where,$table){		
+	return $this->db->get_where($table,$where);
+	}
+	function update_usulan($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
 	}
 	
 	
