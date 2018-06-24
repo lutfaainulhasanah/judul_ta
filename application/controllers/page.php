@@ -69,6 +69,19 @@ class Page extends CI_controller{
  
   }
 
+  function judul_penelitian(){
+    // function ini hanya boleh diakses oleh admin dan dosen
+    $a= array(
+      'uniqid' => 'daftar_penelitian',
+      'penelitian'=>$this->Model_Dosen->get_penelitian());
+    if($this->session->userdata('akses')=='Mahasiswa'){
+      $this->load->view('content',$a);
+    }else{
+      echo "Anda tidak berhak mengakses halaman ini";
+    }
+ 
+  }
+
   function usulan(){
     // function ini hanya boleh diakses oleh admin dan dosen
     if($this->session->userdata('akses')=='Mahasiswa'){
