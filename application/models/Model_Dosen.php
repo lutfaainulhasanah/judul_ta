@@ -69,6 +69,11 @@ class Model_Dosen extends CI_Model {
 		$kodejadi = "PD".$kodemax;
 		return $kodejadi;
 	}
+
+	function get_dospem(){
+		$query = $this->db->query("SELECT judul.nim, mahasiswa.nama_mhs, judul.judul FROM judul,mahasiswa where judul.nim = mahasiswa.nim ");
+		return $query->result();
+	}
 	}
 	
 	

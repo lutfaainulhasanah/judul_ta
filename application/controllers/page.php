@@ -55,8 +55,11 @@ class Page extends CI_controller{
 
   function dospem(){
     // function ini hanya boleh diakses oleh admin dan dosen
+    $a= array(
+      'uniqid' => 'view_dospem',
+       'data'=>$this->Model_Dosen->get_dospem());
     if($this->session->userdata('akses')=='Koordinator' || $this->session->userdata('akses')=='Reviewer' || $this->session->userdata('akses')=='Dosen'){
-      $this->load->view('v_dospem');
+      $this->load->view('content',$a);
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
     }
