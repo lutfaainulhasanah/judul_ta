@@ -37,10 +37,9 @@ class Model_Dosen extends CI_Model {
 	}
 
 	function get_data_edit($id){
-<<<<<<< HEAD
+
 		$query = $this->db->query("SELECT * FROM(SELECT dosen.nip, dosen.nama_dosen, prodi.prodi, dosen.status,dosen.kuota FROM dosen,prodi where dosen.id_prodi = prodi.id_prodi)as a where a.nip='$id' ");
 	return $query->result();
-=======
 		$query = $this->db->query("SELECT * FROM penelitian where id_penelitian='$id'");
 		return $query->result_array();
 	}
@@ -82,7 +81,6 @@ class Model_Dosen extends CI_Model {
 	function get_usulan(){
 		$query = $this->db->query("SELECT * FROM judul");
 		return $query->result();
->>>>>>> da02875f77ba2f4af36c88432083fd7429d6c475
 	}
 	function edit_usulan($where,$table){		
 	return $this->db->get_where($table,$where);
@@ -90,16 +88,13 @@ class Model_Dosen extends CI_Model {
 	function update_usulan($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
-<<<<<<< HEAD
-	}*/
+	}
 	function update($data){
 
 		$query = $this->db->query("UPDATE dosen SET nip =".$data['nip'].", nama_dosen = '".$data['nama_dosen']."', id_prodi = '".$data['prodi']."', status = '".$data['status']."', kuota = '".$data['kuota']."' WHERE nip = ".$data['nipOld']."");
 		return true;
 	}	
-=======
 	}
->>>>>>> da02875f77ba2f4af36c88432083fd7429d6c475
 	}
 	
 	
