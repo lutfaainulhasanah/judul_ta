@@ -17,7 +17,7 @@ class Usulan_mhs extends CI_Controller{
 
   function delete($id_judul){
         $this->db->delete('judul', array('id_judul' => $id_judul));
-        redirect('Usulan_mhs/index');
+        redirect('form_usulan_proposal/usulan/index');
     }
  
 }
